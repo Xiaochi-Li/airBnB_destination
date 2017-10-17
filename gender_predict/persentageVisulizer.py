@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-df = pd.read_csv('../data/train_users_2.csv')
+df = pd.read_csv('/Users/lixiaochi/Documents/study/uq/Semester5/DECO7380/Machine Learning Thesis/thesis/projects/airbnb_new_user_bookings/airBnB_destination/data/origin/train_users_2.csv')
 
 print df.shape
 

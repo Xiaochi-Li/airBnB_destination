@@ -83,15 +83,15 @@ for row in df.iterrows():
         #build an data frame row based on newData
         userInfo['user_id'] = [newData['user_id']]
         for key,value in newData['action'].items():
-            userInfo["action"+ "-" + str(key) ] = [value]
+            userInfo["action"+ "_" + str(key) ] = [value]
         for key,value in newData['action_type'].items():
-            userInfo['action_type'+ '-'+ str(key) ] = [value]
+            userInfo['action_type'+ '_'+ str(key) ] = [value]
         for key,value in newData['action_detail'].items():
-            userInfo['action_detail'+ '-'+ str(key) ] = [value]
+            userInfo['action_detail'+ '_'+ str(key) ] = [value]
         for key,value in newData['device_type'].items():
-            userInfo['device_type'+ '-'+ str(key) ] = [value]
+            userInfo['device_type'+ '_'+ str(key) ] = [value]
         for key,value in newData['secs_elapsed'].items():
-            userInfo['secs_elapsed'+ '-'+ str(key) ] = [value]  
+            userInfo['secs_elapsed'+ '_'+ str(key) ] = [value]  
         
         allSessions = allSessions.append(userInfo, ignore_index=True)
         
@@ -140,6 +140,7 @@ for row in df.iterrows():
 writer = pd.ExcelWriter('pandas_simple.xlsx', engine='xlsxwriter')
 # Convert the dataframe to an XlsxWriter Excel object.
 allSessions.to_excel(writer, sheet_name='Sheet1')
+ print df.index[rowNum]
 # Close the Pandas Excel writer and output the Excel file.
 writer.save()
         
